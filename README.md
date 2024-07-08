@@ -24,7 +24,7 @@ Feel free to reach out to me for any questions or collaboration opportunities:
 
 - Email: [bhandarisurajsingh2003@gmail.com]
 - LinkedIn: [https://www.linkedin.com/in/bhandari-ji/]
-- LeetCode: [https://github.com/Bhandariji-Suraj/LeetCode-100]
+- LeetCode: [https://leetcode.com/u/Bhandariji-Suraj/]
 
 
 
