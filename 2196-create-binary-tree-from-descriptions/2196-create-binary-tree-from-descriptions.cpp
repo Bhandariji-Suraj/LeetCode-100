@@ -15,7 +15,6 @@ public:
         unordered_map<int, TreeNode*> nodes;
         unordered_set<int> children;
         
-        // Create nodes and track children
         for (const auto& description : descriptions) {
             int parentVal = description[0];
             int childVal = description[1];
@@ -37,7 +36,6 @@ public:
             children.insert(childVal);
         }
         
-        // Find the root node (the one which is not a child)
         TreeNode* root = nullptr;
         for (const auto& node : nodes) {
             if (children.find(node.first) == children.end()) {
