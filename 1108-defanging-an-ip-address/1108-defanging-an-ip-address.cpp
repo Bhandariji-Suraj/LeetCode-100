@@ -10,7 +10,7 @@ public:
             }
             else
             {
-                result.push_back(address[i]);
+                result += address[i];
             }
         }
         return result;
