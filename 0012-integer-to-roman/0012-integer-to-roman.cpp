@@ -5,10 +5,11 @@ public:
         vector<string> symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         
         string result;
-        for (int i = 0; i < values.size() && num > 0; i++) {
+        for (int i = 0;num > 0; i++) {
             while (num >= values[i]) {
-                num -= values[i];
                 result += symbols[i];
+                num -= values[i];
+                
             }
         }
         return result;
