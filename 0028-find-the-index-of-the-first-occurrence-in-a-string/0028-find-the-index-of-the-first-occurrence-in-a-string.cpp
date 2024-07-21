@@ -1,27 +1,55 @@
 class Solution {
 public:
+    
+    void lpsfind(vector<int>&lps, string s) {
+	    int pre =0, suff =1;
+         while(suff < s.size())
+	    {
+	        if(s[pre] == s[suff])
+	        {
+	            lps[suff] = pre+1;
+	            pre++;
+	            suff++;
+	        }
+	        else
+	        {
+	            if(pre == 0)
+	            {
+	                lps[suff] = 0;
+	                suff++;
+	            }
+	            else
+	            {
+	                pre = lps[pre -1];
+	            }
+	        }
+	    }
+	}
     int strStr(string haystack, string needle) {
-        int first,second;
-        int n = haystack.size(),m = needle.size();
-        for(int i =0;i<= n-m;i++)
+        vector<int> lps(needle.size(),0);
+        lpsfind(lps,needle);
+        int first =0,second=0;
+        while(second < needle.size() && first < haystack.size())
         {
-            first =i;
-            second = 0;
-            while(second < m)
+            if(needle[second] == haystack[first])
             {
-                if(haystack[first] != needle[second])
-                    break;
-                else
+                second++;
+                first++;
+            }
+            else
+            {
+                if(second == 0)
                 {
                     first++;
-                    second++;
                 }
-
+                else
+                {
+                    second = lps[second-1];
+                }
             }
-            if(second == m)
-                return first - second;
         }
+        if(second == needle.size())
+            return first-second;
         return -1;
-        
     }
 };
