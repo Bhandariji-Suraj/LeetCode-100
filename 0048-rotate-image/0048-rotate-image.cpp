@@ -11,7 +11,7 @@ public:
             }
         }
         
-        //reversing each row
+        //swaping
         for (int i = 0; i < n; i++) 
         {
             for (int j = 0; j < n / 2; j++) 
@@ -19,6 +19,7 @@ public:
                 swap(matrix[i][j], matrix[i][n - 1 - j]);
             }
         }
+        
         
         
         
