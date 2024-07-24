@@ -2,23 +2,23 @@ class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         int n = nums.size();
-        vector<int> answer(n, 1);
-
-        // Calculate prefix products
-        int prefix = 1;
-        for (int i = 0; i < n; ++i) {
-            answer[i] = prefix;
-            prefix *= nums[i];
-        }
-
-        // Calculate suffix products and multiply with prefix products
-        int suffix = 1;
-        for (int i = n - 1; i >= 0; --i) {
-            answer[i] *= suffix;
-            suffix *= nums[i];
-        }
-
-        return answer;
+        vector<int> left(n, 1);
+        vector<int> right(n,1);
         
+        //left
+        for(int i=1;i<n;i++)
+            left[i] = left[i-1] * nums[i-1];
+        
+        // right
+        for(int i = n-2;i>-1;i--)
+            right[i] = right[i+1] * nums[i+1];
+        
+        //final add
+        vector<int> result(n,1);
+        for(int i =0;i<n;i++)
+        {
+            result[i] = left[i]*right[i];
+        }
+        return result;
     }
 };
