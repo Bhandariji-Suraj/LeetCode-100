@@ -29,8 +29,8 @@ public:
         }
         
         //absolute sum
-        int sum = sum1 - sum2;
-        return abs(sum);
+        sum1 -= sum2;
+        return abs(sum1);
         
     }
 };
