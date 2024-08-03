@@ -12,8 +12,8 @@ public:
                 int sum = nums[i]+ nums[s]+nums[e];
                 if(sum == target) 
                     return sum;
-                long long sumdiff = static_cast<long long>(abs(sum-target));
-                long long closediff = abs(static_cast<long long>(close - target));
+                int sumdiff = abs(sum-target);
+                int closediff = abs(close - target);
                 if(sumdiff < closediff)
                     close = sum;
                 if(sum < target)
